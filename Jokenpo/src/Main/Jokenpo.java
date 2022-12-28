@@ -15,41 +15,97 @@ public class Jokenpo {
 //Entrada de dados
 		String resposta = JOptionPane.showInputDialog("Pedra, Papel ou Tesoura?");
 		
-		System.out.println("Você: " + resposta + "\n");
+		System.out.println("VocÃª: " + resposta + "\n");
 		
 //Jogada da CPU		
 		List<String> opcoes = Arrays.asList("Pedra", "Papel", "Tesoura");
 		String resCpu = opcoes.get(new Random().nextInt(opcoes.size()));
 		System.out.println("CPU: " + resCpu + "\n");
+
+		String log = "Escolha da Cpu: " + resCpu +"\n" + "Escolha do Jogador: " + resposta;
+
+		JOptionPane.showMessageDialog(null, log);
 		
 
-//Lógica do ganhador
+//Lï¿½gica do ganhador
 
-		
-		if(resposta.equalsIgnoreCase("Pedra") && resCpu.equalsIgnoreCase("Papel")) {
-			JOptionPane.showMessageDialog(null, "Você perdeu!");
+		switch(resposta) {
+
+			case "Pedra": {
+
+				if(resCpu.equalsIgnoreCase("Papel")){
+					JOptionPane.showMessageDialog(null, "Vocï¿½ perdeu!");
+				}
+				else if(resCpu.equalsIgnoreCase("Pedra")){
+					JOptionPane.showMessageDialog(null, "Deu empate!");
+				}
+				else{
+					JOptionPane.showMessageDialog(null, "Parabï¿½ns, vocï¿½ ganhou!");
+				}
+				break;
+			}
+
+			case "Papel": {
+
+				if(resCpu.equalsIgnoreCase("Tesoura")){
+					JOptionPane.showMessageDialog(null, "Vocï¿½ perdeu!");
+				}
+				else if(resCpu.equalsIgnoreCase("Papel")){
+					JOptionPane.showMessageDialog(null, "Deu empate!");
+				}
+				else{
+					JOptionPane.showMessageDialog(null, "Parabï¿½ns, vocï¿½ ganhou!");
+				}
+				break;
+			}
+
+			case "Tesoura": {
+
+				if(resCpu.equalsIgnoreCase("Pedra")){
+					JOptionPane.showMessageDialog(null, "Vocï¿½ perdeu!");
+				}
+				else if(resCpu.equalsIgnoreCase("Tesoura")){
+					JOptionPane.showMessageDialog(null, "Deu empate!");
+				}
+				else{
+					JOptionPane.showMessageDialog(null, "Parabï¿½ns, vocï¿½ ganhou!");
+				}
+				break;
+			}
+
+			default: {JOptionPane.showMessageDialog(null, "Isso nÃ£o estÃ¡ no jogo!");}
+		}
+
+
+
+		/*if(resposta.equalsIgnoreCase("Pedra") && resCpu.equalsIgnoreCase("Papel")) {
+			JOptionPane.showMessageDialog(null, "Vocï¿½ perdeu!");
 			
-		} else if(resposta.equalsIgnoreCase("Pedra") && resCpu.equalsIgnoreCase("Tesoura")) {
-			JOptionPane.showMessageDialog(null, "Parabéns, você ganhou!");
+		}
+		
+		
+		
+		else if(resposta.equalsIgnoreCase("Pedra") && resCpu.equalsIgnoreCase("Tesoura")) {
+			JOptionPane.showMessageDialog(null, "Parabï¿½ns, vocï¿½ ganhou!");
 		}
 		else if(resposta.equalsIgnoreCase("Papel") && resCpu.equalsIgnoreCase("Pedra")) {
-			JOptionPane.showMessageDialog(null, "Parabéns, você ganhou!");
+			JOptionPane.showMessageDialog(null, "Parabï¿½ns, vocï¿½ ganhou!");
 		}
 		else if(resposta.equalsIgnoreCase("Papel") && resCpu.equalsIgnoreCase("Tesoura")) {
-			JOptionPane.showMessageDialog(null, "Você perdeu!");
+			JOptionPane.showMessageDialog(null, "Vocï¿½ perdeu!");
 		}
 		else if(resposta.equalsIgnoreCase("Tesoura") && resCpu.equalsIgnoreCase("Papel")) {
-			JOptionPane.showMessageDialog(null, "Parabéns, você ganhou!");
+			JOptionPane.showMessageDialog(null, "Parabï¿½ns, vocï¿½ ganhou!");
 			
 		}else if(resposta.equalsIgnoreCase("Tesoura") && resCpu.equalsIgnoreCase("Pedra")) {
-			JOptionPane.showMessageDialog(null, "Você perdeu!");
+			JOptionPane.showMessageDialog(null, "Vocï¿½ perdeu!");
 			
 		}else if(resposta.equalsIgnoreCase(resCpu)) {
 			System.out.println("Empate!");
 		}
 		else {
-			System.out.println("Isso não tá no jogo!");
-		}
+			System.out.println("Isso nï¿½o tï¿½ no jogo!");
+		}*/
 	    
 		
 	}
